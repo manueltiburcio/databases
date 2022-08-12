@@ -1,5 +1,5 @@
 var controller = require('./controllers');
-var router = require('express').Router();
+var router = require('express').Router(); // middleware
 
 //Connect controller methods to their corresponding routes
 router.get('/messages', controller.messages.get);
