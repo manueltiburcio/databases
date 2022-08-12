@@ -5,18 +5,18 @@ module.exports = {
     // get all messages
     // select text, username, roomname, id
 
-    var queryStr = 'SELECT messages.id, messages.text, messages.roomname, users.username FROM messages \
-                    LEFT OUTER JOIN users ON (messages.userid = user.id) \
-                    ORDER BY messages.id DESC';
+    var queryStr = 'select messages.id, messages.text, messages.roomname, users.username \
+                    from messages left outer join users on (messages.userid = users.id) \
+                    order by messages.id desc';
     db.query(queryStr, function(err, results) {
       callback(err, results);
     });
 
   }, // a function which produces all the messages
-  create: function () {
+  create: function (params, callback) {
     // create a message for a user id based on the username
-    var queryStr = 'INSERT INTO messages(text, userid, roomname) \
-                    value (?, (SELECT id FROM users WHERE username = ? limit 1), ?)';
+    var queryStr = 'insert into messages(text, userid, roomname) \
+                    value (?, (select id from users where username = ? limit 1), ?)';
     db.query(queryStr, params, function(err, results) {
       callback(err, results);
     });

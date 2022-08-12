@@ -8,9 +8,9 @@ const API_URL = 'http://127.0.0.1:3000/classes';
 
 describe('Persistent Node Chat Server', () => {
   const dbConnection = mysql.createConnection({
-    user: 'student',
-    password: 'student',
-    database: 'chat',
+    user: "root",
+    password: "",
+    database: "chat",
   });
 
   beforeAll((done) => {

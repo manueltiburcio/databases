@@ -4,15 +4,15 @@ USE chat;
 
 CREATE TABLE messages (
   /* Describe your table here.*/
-  id INT(11) AUTO_INCREMENT,
-  userid INT(11) NOT NULL, /* foreign key */
-  text VARCHAR(100) NOT NULL,
-  roomname VARCHAR(100),
+  id INT NOT NULL AUTO_INCREMENT,
+  userid INT NOT NULL, /* foreign key */
+  text VARCHAR(200) NOT NULL,
+  roomname VARCHAR(20),
   PRIMARY KEY (ID)
 );
 
 CREATE TABLE users (
-  id INT(11) AUTO_INCREMENT,
+  id INT NOT NULL AUTO_INCREMENT,
   username VARCHAR(40) NOT NULL,
   PRIMARY KEY (ID)
 );

@@ -12,7 +12,7 @@ module.exports = {
     });
   },
   post: function (req, res) {
-    var params = [req.body[username]];
+    var params = [req.body.username];
     models.users.create(params, function(err, results) {
       if (err) {
         console.error('Unable to post users to the database: ', err);

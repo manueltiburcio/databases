@@ -5,14 +5,14 @@ module.exports = {
     // get all user
     var queryStr = "SELECT * FROM users";
     db.query(queryStr, function(err, results) {
-      callback(results)
+      callback(err, results)
     })
   },
   create: function (params, callback) {
     // create user
-    var queryStr = "INSERT INTO users (username) values (?)";
-    db.query(queryStr, params function(err, results) {
-      callback(results)
+    var queryStr = "INSERT INTO users(username) values (?)";
+    db.query(queryStr, params, function(err, results) {
+      callback(err, results)
     })
   }
 };
